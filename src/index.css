@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cinzel:wght@400..900&family=Inter:wght@100..900&family=Great+Vibes&display=block');
+@import "tailwindcss";
+
+/* =============================================
+   BOHO COLOR PALETTE
+   Ivory    #F5EFE0  — background / paper
+   Sand     #C9B99A  — light neutral accent
+   Taupe    #9C8470  — mid-tone text/borders
+   Terra    #C4714A  — primary accent (replaces sage)
+   Rust     #A84C2C  — deep accent / hover
+   Umber    #6B3D28  — dark rich tones
+   Sienna   #8B4513  — warm earthy accent
+   ============================================= */
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-script: "Cinzel", serif;
+  --font-cursive: "Great Vibes", cursive;
+  --font-sans: "Inter", sans-serif;
+
+  /* Primary accent (Gold) */
+  --color-sage: #d4af37;
+
+  /* Background (White) */
+  --color-paper: #ffffff;
+
+  /* Extended ash/white palette */
+  --color-sand: #d9d9d9;
+  --color-taupe: #a6a6a6;
+  --color-rust: #c5a017;
+  --color-umber: #000000;
+  --color-sienna: #1a1a1a;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-paper);
+  color: #3D2B1F;
+  font-family: var(--font-sans);
+}
+
+.serif {
+  font-family: var(--font-serif);
+}
+
+.script {
+  font-family: var(--font-script);
+}
+
+.cursive {
+  font-family: var(--font-cursive);
+}
+
+.clip-path-envelope {
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
+
+.clip-path-envelope-bottom {
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+
+/* 3D Transform Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* Safari/iOS: prevent mirrored text bleeding through during 3D flips */
+.flip-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -webkit-font-smoothing: antialiased;
+  will-change: transform;
+}
+
+.flip-face * {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.ios-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-paper);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-sage);
+  opacity: 0.4;
+  border-radius: 10px;
+}
+
+/* Snap Scrolling Styles */
+.snap-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  touch-action: pan-y;
+  height: 100dvh;
+  width: 100%;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+  height: 100dvh;
+  width: 100%;
+}
+
+/* Hide scrollbar for seamless story experience */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hide native video play buttons on iOS/Android */
+video::-webkit-media-controls {
+  display: none !important;
+}
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
