@@ -456,6 +456,29 @@ export default function StoryApp() {
                       Live Location
                     </a>
                   </div>
+
+                  <div className="bg-[#EAE1D3] py-2 rounded-t-xl mb-1">
+                    <p className="text-[12px] uppercase tracking-[0.2em] font-bold text-[#8B7355]">Dress Code</p>
+                  </div>
+                  <div className="bg-white py-4 px-2 rounded-b-xl shadow-sm border border-white flex flex-col items-center">
+                    <p className="serif text-[12px] italic text-zinc-500 mb-3">Kindly dress in our wedding colours</p>
+                    <div className="flex justify-center gap-4">
+                      {[
+                        { name: "White", color: "#FFFFFF" },
+                        { name: "Black", color: "#1A1A1A" },
+                        { name: "Ash", color: "#B2B2B2" },
+                        { name: "Gold", color: "linear-gradient(135deg, #E6C77A 0%, #C9A24D 50%, #A8832F 100%)" },
+                      ].map((c) => (
+                        <div key={c.name} className="flex flex-col items-center gap-1.5">
+                          <span
+                            className="w-9 h-9 rounded-full border border-zinc-300 shadow-sm"
+                            style={{ background: c.color }}
+                          />
+                          <p className="text-[10px] uppercase tracking-widest font-semibold text-[#3D2B1F]">{c.name}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </div>
